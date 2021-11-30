@@ -2,7 +2,7 @@ require: rubocop-rails
 
 AllCops:
   DisplayCopNames: true
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 3.0.2
   Include:
     - "**/Gemfile"
     - "**/Rakefile"
