@@ -13,10 +13,13 @@ module Spree
 
           def handle_clone_menu_items
             old_root_menu_items = @old_store.menu_items.where(parent: nil).order(depth: :asc).order(id: :asc)
-            old_root_menu_items.each do |root_menu_item|
-              return false unless clone_menu_item(parent_menu_item: root_menu_item,
-                                                  terminate: false)
-            end
+            save_root_menu_items =  @new_store.menu_items.build(get_model_hash(old_root_menu_items))
+            return false unless save_models(save_root_menu_items)
+            
+            # old_root_menu_items.each do |root_menu_item|
+            #   return false unless clone_menu_item(parent_menu_item: root_menu_item,
+            #                                       terminate: false)
+            # end
             true
           end
 

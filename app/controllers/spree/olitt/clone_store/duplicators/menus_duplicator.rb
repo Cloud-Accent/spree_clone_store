@@ -11,7 +11,7 @@ module Spree
           end
 
           def handle_clone_menus
-            menus = @old_store.menus
+            menus = @old_store.menus.all
             cloned_menus = @new_store.menus.build(get_model_hash(menus))
             return false unless save_models(cloned_menus)
 
