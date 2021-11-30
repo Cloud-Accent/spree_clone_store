@@ -26,12 +26,12 @@ module Spree
                                                          new_store: @new_store).handle_clone_menus
           return unless Duplicators::MenuItemsDuplicator.new(old_store: @old_store,
                                                              new_store: @new_store).handle_clone_menu_items
-          return unless Duplicators::PagesDuplicator.new(old_store: @old_store,
-                                                         new_store: @new_store).handle_clone_pages
-          return unless Duplicators::SectionsDuplicator.new(old_store: @old_store,
-                                                            new_store: @new_store).handle_clone_sections
-          return unless Duplicators::ProductsDuplicator.new(old_store: @old_store,
-                                                            new_store: @new_store).handle_clone_products
+          # return unless Duplicators::PagesDuplicator.new(old_store: @old_store,
+          #                                                new_store: @new_store).handle_clone_pages
+          # return unless Duplicators::SectionsDuplicator.new(old_store: @old_store,
+          #                                                   new_store: @new_store).handle_clone_sections
+          # return unless Duplicators::ProductsDuplicator.new(old_store: @old_store,
+          #                                                   new_store: @new_store).handle_clone_products
 
           finish
         end

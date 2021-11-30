@@ -31,7 +31,7 @@ module Spree
 
             terminate = true unless save_models(cloned_menu_items)
 
-            old_menu_items.each { |menu_item| return false unless clone_menu_item(parent_menu_item: menu_item, terminate: terminate) }
+            # old_menu_items.each { |menu_item| return false unless clone_menu_item(parent_menu_item: menu_item, terminate: terminate) }
             true
           end
 
