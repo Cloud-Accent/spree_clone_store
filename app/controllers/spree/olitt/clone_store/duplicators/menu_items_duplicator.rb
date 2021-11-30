@@ -36,7 +36,6 @@ module Spree
             loop_back(old_child_menu_items: old_child_menu_items)
           end
 
-
           def loop_back(old_child_menu_items:)
             old_child_menu_items.each { |menu_item| clone_child_menu_item(parent_menu_item: menu_item) }
           end
@@ -51,7 +50,6 @@ module Spree
 
               new_menu_item
             end
-            new_menu.menu_items.build(attributes_for_each_taxon)
           end
 
           def get_new_parent(old_menu_item:)
@@ -69,25 +67,6 @@ module Spree
           def get_old_menu_items(parent:)
             @old_menu_items_by_parent[parent]
           end
-
-          # def get_new_menu_item_linked_resource(resource_type:, resource_id:)
-          #   resource = resource_type.constantize
-          #   old_linked_resource = resource.find_by(id: resource_id)
-
-          #   if old_linked_resource.instance_of?('Spree::Taxon'.constantize)
-          #     return @linked_resource.get_new_linked_taxon(old_taxon: old_linked_resource)
-          #   end
-
-          #   if old_linked_resource.instance_of?('Spree::Product'.constantize)
-          #     return @linked_resource.get_new_linked_product(old_product: old_linked_resource)
-          #   end
-
-          #   if old_linked_resource.instance_of?('Spree::CmsPage'.constantize)
-          #     return @linked_resource.get_new_linked_page(old_page: old_linked_resource)
-          #   end
-
-          #   nil
-          # end
         end
       end
     end
