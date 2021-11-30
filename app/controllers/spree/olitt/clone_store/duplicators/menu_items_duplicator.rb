@@ -12,7 +12,7 @@ module Spree
           end
 
           def handle_clone_menu_items
-            old_root_menu_items = @old_store.menu_items.where(parent: nil).order(depth: :asc).order(id: :asc)
+            old_root_menu_items = @old_store.menu_items.all
             save_root_menu_items =  @new_store.menu_items.build(get_model_hash(old_root_menu_items))
             return false unless save_models(save_root_menu_items)
             
