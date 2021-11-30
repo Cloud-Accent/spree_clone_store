@@ -29,12 +29,13 @@ module Spree
 
             return loop_back(old_child_menu_items: old_child_menu_items) if parent_menu_item.nil?
 
-            terminate = true unless save_models(cloned_menu_items)
+            new_child_menu_items = reassign_menu_items_properies(old_child_menu_items: old_child_menu_items)
 
             save_models(models: new_child_menu_items)
 
             loop_back(old_child_menu_items: old_child_menu_items)
           end
+
 
           def loop_back(old_child_menu_items:)
             old_child_menu_items.each { |menu_item| clone_child_menu_item(parent_menu_item: menu_item) }
